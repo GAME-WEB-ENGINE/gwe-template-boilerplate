@@ -13,7 +13,7 @@ class GameScreen extends GWE.Screen {
     this.dragLength = [0, 0];
     this.view = GWE.gfxManager.getView(0);
 
-    this.mesh = new GWE.GfxJAMDrawable();
+    this.mesh = new GWE.GfxJAM();
     this.mesh.setPosition([0, 0, -10]);
     this.mesh.loadFromFile('./assets/models/cube.jam');
     this.mesh.play('IDLE', true);

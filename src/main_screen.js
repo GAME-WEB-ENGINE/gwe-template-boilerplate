@@ -7,17 +7,17 @@ class MainScreen extends GWE.Screen {
   }
 
   onEnter() {
-    this.menuWidget = new GWE.UIMenuWidget();
-    this.menuWidget.addItemWidget(new GWE.UIMenuTextWidget({text: 'Jeu'}));
-    this.menuWidget.addItemWidget(new GWE.UIMenuTextWidget({text: 'Paramètres'}));
-    GWE.uiManager.addWidget(this.menuWidget, 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%)');
-    GWE.uiManager.focus(this.menuWidget);
+    this.uiMenu = new GWE.UIMenu();
+    this.uiMenu.addWidget(new GWE.UIMenuText({text: 'Jeu'}));
+    this.uiMenu.addWidget(new GWE.UIMenuText({text: 'Paramètres'}));
+    GWE.uiManager.addWidget(this.uiMenu, 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%)');
+    GWE.uiManager.focus(this.uiMenu);
 
-    GWE.eventManager.subscribe(this.menuWidget, 'E_MENU_ITEM_SELECTED', this, this.handleMenuItemSelected);
+    GWE.eventManager.subscribe(this.uiMenu, 'E_MENU_ITEM_SELECTED', this, this.handleMenuItemSelected);
   }
 
   onExit() {
-    GWE.uiManager.removeWidget(this.menuWidget);
+    GWE.uiManager.removeWidget(this.uiMenu);
   }
 
   handleMenuItemSelected(data) {
