@@ -32,8 +32,8 @@ class GameScreen extends GWE.Screen {
     if (event instanceof GWE.MouseDragEvent) {
       let newRotation = [0, 0, 0];
       this.dragLength = [event.position[0] - this.lastMousePosition[0], event.position[1] - this.lastMousePosition[1]];      
-      newRotation[1] = this.lastRotation[1] + this.dragLength[0] * 0.01;
-      newRotation[0] = this.lastRotation[0] + this.dragLength[1] * 0.01;
+      newRotation[1] = this.lastRotation[1] + this.dragLength[0] * 0.001;
+      newRotation[0] = this.lastRotation[0] + this.dragLength[1] * 0.001;
       this.view.setRotation(newRotation);
     }
   }
